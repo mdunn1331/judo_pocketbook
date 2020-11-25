@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:judo_pocketbook/models/enums/belt.dart';
 
 class TechniqueCell extends StatelessWidget {
@@ -11,9 +12,13 @@ class TechniqueCell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text(
-          techniqueName,
-        style: TextStyle(color: belt.alternateColor),
+      child: ListTile(
+        title: Center(
+          child: Text(
+            techniqueName,
+            style: TextStyle(color: belt.alternateColor),
+          ),
+        ),
       ),
       color: belt.beltColor,
       alignment: Alignment.center,

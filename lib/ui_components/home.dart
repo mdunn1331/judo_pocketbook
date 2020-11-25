@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:judo_pocketbook/models/enums/belt.dart';
-import 'package:judo_pocketbook/ui_components/belt_cell.dart';
-import 'package:judo_pocketbook/ui_components/technique_cell.dart';
+import 'package:judo_pocketbook/ui_components/belt_list_view/belt_list_view.dart';
+import 'file:///C:/Users/mdunn/AndroidStudioProjects/judo_pocketbook/lib/ui_components/belt_list_view/belt_cell.dart';
+import 'file:///C:/Users/mdunn/AndroidStudioProjects/judo_pocketbook/lib/ui_components/techniques_list_view/technique_cell.dart';
+import 'package:judo_pocketbook/ui_components/techniques_list_view/techniques_list_view.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key, this.title}) : super(key: key);
@@ -26,31 +28,26 @@ class _BeltState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(
+            widget.title,
+            style: TextStyle(color: _beltState.alternateColor),
+        ),
+        backgroundColor: _beltState.beltColor,
+        shadowColor: _beltState.beltColor,
       ),
       body:Column (
         children: <Widget>[
-          Container(
-            child: ListView.builder(
-              itemCount: Belt.values.length,
-              itemBuilder: (BuildContext context, int index) => new BeltCell(belt: Belt.values[index]),
-              scrollDirection: Axis.horizontal,
-            ),
-            height: 50,
+          Expanded(
+            flex: 1,
+            child: BeltListView(onCellTapped:(belt) => setBeltState(belt),),
           ),
           Container(
             height: 1,
-            color: Colors.black,
+            color: _beltState.alternateColor,
           ),
           Expanded(
-              child: ListView(
-                children: <Widget>[
-                  TechniqueCell(
-                      techniqueName: "Test State",
-                      belt: _beltState
-                  )
-                ],
-              ),
+            flex: 8,
+              child:TechniquesListView(selectedBelt: _beltState,)
           )
         ],
       )

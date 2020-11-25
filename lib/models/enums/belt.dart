@@ -60,4 +60,8 @@ extension BeltExtension on Belt {
         return "Black";
     }
   }
+
+  List<String> get beltTechniques {
+    return ["Osoto Gari", "Ippon Seioi", "De Ashi", "Ogoshi"];
+  }
 }

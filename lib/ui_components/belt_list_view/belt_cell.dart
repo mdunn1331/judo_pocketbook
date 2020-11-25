@@ -6,20 +6,25 @@ class BeltCell extends StatelessWidget {
 
   final Belt belt;
 
-  BeltCell({Key key, this.belt}) : super(key: key);
+  final void Function(Belt) onTap;
+
+  BeltCell({Key key, this.belt, this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: ListTile(
-        title: Text(
-          belt.beltName,
-          style: TextStyle(color: belt.alternateColor),
+        title:Center(
+          child: Text(
+            belt.beltName,
+            style: TextStyle(color: belt.alternateColor),
+          ),
         ),
+        onTap: () {
+          onTap(belt);
+        },
       ),
       color: belt.beltColor,
-      alignment: Alignment.center,
-      height: 50,
       width: 100,
     );
   }
