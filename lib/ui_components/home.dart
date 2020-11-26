@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text(
             title,
-            style: TextStyle(color: techniqueBookModel.belt.beltColor),
+            style: TextStyle(color: techniqueBookModel.belt.alternateColor),
           ),
           backgroundColor: techniqueBookModel.belt.beltColor,
           shadowColor: techniqueBookModel.belt.beltColor,
