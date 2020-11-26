@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:judo_pocketbook/models/enums/belt.dart';
+import 'package:judo_pocketbook/enums/belt.dart';
 import 'package:judo_pocketbook/ui_components/belt_list_view/belt_cell.dart';
 
 class BeltListView extends StatefulWidget {

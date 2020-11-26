@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:judo_pocketbook/models/enums/belt.dart';
+import 'package:judo_pocketbook/enums/belt.dart';
 
 class BeltCell extends StatelessWidget {
 

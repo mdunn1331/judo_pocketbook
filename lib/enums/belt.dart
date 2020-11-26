@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 enum Belt {
-  white,
+  // white,
   yellow,
   orange,
   green,
@@ -12,8 +12,8 @@ enum Belt {
 extension BeltExtension on Belt {
   Color get beltColor {
     switch(this) {
-      case Belt.white:
-        return Colors.white;
+      // case Belt.white:
+      //   return Colors.white;
       case Belt.yellow:
         return Colors.yellow;
       case Belt.orange:
@@ -29,8 +29,8 @@ extension BeltExtension on Belt {
 
   Color get alternateColor {
     switch(this) {
-      case Belt.white:
-        return Colors.black;
+      // case Belt.white:
+      //   return Colors.black;
       case Belt.yellow:
         return Colors.black;
       case Belt.orange:
@@ -46,8 +46,8 @@ extension BeltExtension on Belt {
 
   String get beltName {
     switch(this) {
-      case Belt.white:
-        return "White";
+      // case Belt.white:
+      //   return "White";
       case Belt.yellow:
         return "Yellow";
       case Belt.orange:
@@ -59,9 +59,5 @@ extension BeltExtension on Belt {
       case Belt.black:
         return "Black";
     }
-  }
-
-  List<String> get beltTechniques {
-    return ["Osoto Gari", "Ippon Seioi", "De Ashi", "Ogoshi"];
   }
 }

@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:judo_pocketbook/models/technique_book_model.dart';
 import 'package:judo_pocketbook/ui_components/home.dart';
+import 'package:provider/provider.dart';
+import 'package:judo_pocketbook/enums/belt.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => TechniqueBookModel(startingBelt: Belt.yellow),
+      child:MyApp()
+  )
+  );
 }
 
 class MyApp extends StatelessWidget {
